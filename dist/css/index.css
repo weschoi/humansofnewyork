@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+.nopadding {
+  padding: 0; }
+
+html, body {
+  height: 100%; }
+
+.container-fluid {
+  height: 100%;
+  padding: 0; }
+  .container-fluid .container-fluid {
+    display: -webkit-flex;
+    /* Safari */
+    display: flex; }
+    .container-fluid .container-fluid .nav {
+      height: 100%;
+      position: fixed;
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+      background-color: black;
+      width: 52px;
+      border-right: 1px solid #979797; }
+      .container-fluid .container-fluid .nav span {
+        position: absolute;
+        color: white;
+        font: 400 13.5px 'Poppins', sans-serif;
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        transform: rotate(270deg);
+        width: 200px;
+        top: 48px;
+        left: -75px; }
+    .container-fluid .container-fluid .content {
+      width: 100%;
+      display: -webkit-flex;
+      /* Safari */
+      display: flex; }
+      .container-fluid .container-fluid .content .hero {
+        flex: 5;
+        background-color: black; }
+        .container-fluid .container-fluid .content .hero div {
+          padding-left: 52px; }
+          .container-fluid .container-fluid .content .hero div span {
+            display: block;
+            color: white; }
+        .container-fluid .container-fluid .content .hero h1 {
+          padding: 0; }
+      .container-fluid .container-fluid .content .stories {
+        flex: 4;
+        background-color: blue;
+        float: right;
+        overflow: scroll;
+        display: -webkit-flex;
+        /* Safari */
+        display: flex; }
+        .container-fluid .container-fluid .content .stories .story {
+          width: 140px;
+          background-color: yellow;
+          border: 2px solid green; }
+
+/*# sourceMappingURL=index.css.map */

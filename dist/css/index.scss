@@ -1,0 +1,107 @@
+@import "bootstrap_scss/breakpoints";
+@import "bootstrap_scss/functions";
+@import "bootstrap_scss/variables";
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+ @mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+  // -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  // filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
+
+@mixin display() {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+* {
+  // border: 2px solid red;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container-fluid {
+  height: 100%;
+  padding: 0;
+
+  .container-fluid {
+
+    @include display();
+
+    .nav {
+      height: 100%;
+      position: fixed;
+      @include display();
+
+      background-color: black;
+      width: 52px;
+      border-right: 1px solid #979797;
+
+      span {
+        position: absolute;
+        color: white;
+        font: 400 13.5px 'Poppins', sans-serif;
+        @include rotate(270deg);
+        width: 200px;
+        top: 48px;
+        left: -75px;
+      }
+    }
+
+    .content {
+      width: 100%;
+      @include display();
+
+      .hero {
+        flex: 5;
+        background-color: black;
+
+        div {
+          padding-left: 52px;
+
+          span {
+            display: block;
+            color: white;
+          }
+        }
+
+        h1 {
+          padding: 0;
+        }
+      }
+
+      .stories {
+        flex: 4;
+        background-color: blue;
+        float: right;
+        overflow: scroll;
+        @include display();
+
+        .story {
+          // flex: 1;
+          width: 140px;
+          // overflow: hidden;
+          background-color: yellow;
+          border: 2px solid green;
+        }
+      }
+    }
+  }
+}
