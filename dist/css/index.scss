@@ -2,6 +2,18 @@
 @import "bootstrap_scss/functions";
 @import "bootstrap_scss/variables";
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@font-face {
+  font-family: "HelveticaNeueLTStd-BlkEx";
+  src: url(fonts/HelveticaNeueLTStd-BlkEx.otf)
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -20,9 +32,12 @@
   // filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
 }
 
-@mixin display() {
+@mixin display($direction, $x, $y) {
   display: -webkit-flex; /* Safari */
   display: flex;
+  flex-direction: $direction;
+  justify-content: $x;
+  align-items: $y;
 }
 
 .nopadding {
@@ -43,43 +58,90 @@ html, body {
 
   .container-fluid {
 
-    @include display();
+    @include display(initial, initial, initial);
 
-    .nav {
+    .menu {
+      width: 52px;
       height: 100%;
+
       position: fixed;
-      @include display();
+      top: 0px;
+      left: 0px;
+      z-index: 1;
 
       background-color: black;
-      width: 52px;
       border-right: 1px solid #979797;
+      cursor: pointer;
+
+      @include display(initial, center, center);
 
       span {
-        position: absolute;
-        color: white;
-        font: 400 13.5px 'Poppins', sans-serif;
-        @include rotate(270deg);
         width: 200px;
+        position: absolute;
         top: 48px;
         left: -75px;
+
+        font: 400 13.5px 'Poppins', sans-serif;
+        color: white;
+        @include rotate(270deg);
+      }
+
+      > div {
+        @include display(initial, center, center);
+
+        > div {
+          width: 2px;
+          height: 35px;
+          background-color: #979797;
+          margin: 0 2px;
+          @include transition(background-color .5s ease);
+        }
+      }
+
+      > div:hover {
+        > div {
+          background-color: white;
+        }
       }
     }
 
-    .content {
+    .main {
       width: 100%;
-      @include display();
+      position: relative;
+      padding-left: 52px;
+      @include display(initial, initial, initial);
 
       .hero {
         flex: 5;
         background-color: black;
+        position: relative;
 
-        div {
-          padding-left: 52px;
+        .container-newyork {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          @include display(column, center, center);
 
           span {
+            font-family: "HelveticaNeueLTStd-BlkEx";
+            font-size: 58px;
+            text-transform: uppercase;
+            line-height: 44px;
             display: block;
             color: white;
           }
+        }
+
+        .statue {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          right: 0px;
+          background: url("../images/statue-3.png") no-repeat;
+          background-position: 50% 85px;
+          background-size: contain;
         }
 
         h1 {
@@ -87,16 +149,16 @@ html, body {
         }
       }
 
-      .stories {
+      .container-story {
         flex: 4;
         background-color: blue;
         float: right;
         overflow: scroll;
-        @include display();
+        @include display(initial, initial, initial);
 
         .story {
           // flex: 1;
-          width: 140px;
+          width: 200px;
           // overflow: hidden;
           background-color: yellow;
           border: 2px solid green;

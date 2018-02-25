@@ -9,23 +9,35 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="nav">
+        <div className="menu">
           <span>Humans of New York</span>
-        </div>
-        <div className="content">
-          <div className="hero">
-            <div>
-              <span>New York</span>
-              <span>New York</span>
-              <span>New York</span>
-              <span>New York</span>
-              <span>New York</span>
-              <span>New York</span>
-              <span>New York</span>
-              <span>New York</span>
-            </div>
+          <div>
+            <div></div>
+            <div></div>
           </div>
-          <div className="stories">
+        </div>
+
+        <div className="main">
+          <div className="hero">
+
+            <div className="container-newyork">
+                <span>New York</span>
+                <span>New York</span>
+                <span>New York</span>
+                <span>New York</span>
+                <span>New York</span>
+                <span>New York</span>
+                <span>New York</span>
+                <span>New York</span>
+            </div>
+
+              <div className="statue">
+              </div>
+
+
+          </div>
+
+          <div className="container-story">
             <div className="story">Story 1</div>
             <div className="story">Story 2</div>
             <div className="story">Story 3</div>

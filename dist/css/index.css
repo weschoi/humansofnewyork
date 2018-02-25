@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@font-face {
+  font-family: "HelveticaNeueLTStd-BlkEx";
+  src: url(fonts/HelveticaNeueLTStd-BlkEx.otf); }
 .nopadding {
   padding: 0; }
 
@@ -11,53 +14,112 @@ html, body {
   .container-fluid .container-fluid {
     display: -webkit-flex;
     /* Safari */
-    display: flex; }
-    .container-fluid .container-fluid .nav {
+    display: flex;
+    flex-direction: initial;
+    justify-content: initial;
+    align-items: initial; }
+    .container-fluid .container-fluid .menu {
+      width: 52px;
       height: 100%;
       position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 1;
+      background-color: black;
+      border-right: 1px solid #979797;
+      cursor: pointer;
       display: -webkit-flex;
       /* Safari */
       display: flex;
-      background-color: black;
-      width: 52px;
-      border-right: 1px solid #979797; }
-      .container-fluid .container-fluid .nav span {
+      flex-direction: initial;
+      justify-content: center;
+      align-items: center; }
+      .container-fluid .container-fluid .menu span {
+        width: 200px;
         position: absolute;
-        color: white;
+        top: 48px;
+        left: -75px;
         font: 400 13.5px 'Poppins', sans-serif;
+        color: white;
         -webkit-transform: rotate(270deg);
         -moz-transform: rotate(270deg);
         -ms-transform: rotate(270deg);
         -o-transform: rotate(270deg);
-        transform: rotate(270deg);
-        width: 200px;
-        top: 48px;
-        left: -75px; }
-    .container-fluid .container-fluid .content {
+        transform: rotate(270deg); }
+      .container-fluid .container-fluid .menu > div {
+        display: -webkit-flex;
+        /* Safari */
+        display: flex;
+        flex-direction: initial;
+        justify-content: center;
+        align-items: center; }
+        .container-fluid .container-fluid .menu > div > div {
+          width: 2px;
+          height: 35px;
+          background-color: #979797;
+          margin: 0 2px;
+          -webkit-transition: background-color 0.5s ease;
+          -moz-transition: background-color 0.5s ease;
+          -ms-transition: background-color 0.5s ease;
+          -o-transition: background-color 0.5s ease;
+          transition: background-color 0.5s ease; }
+      .container-fluid .container-fluid .menu > div:hover > div {
+        background-color: white; }
+    .container-fluid .container-fluid .main {
       width: 100%;
+      position: relative;
+      padding-left: 52px;
       display: -webkit-flex;
       /* Safari */
-      display: flex; }
-      .container-fluid .container-fluid .content .hero {
+      display: flex;
+      flex-direction: initial;
+      justify-content: initial;
+      align-items: initial; }
+      .container-fluid .container-fluid .main .hero {
         flex: 5;
-        background-color: black; }
-        .container-fluid .container-fluid .content .hero div {
-          padding-left: 52px; }
-          .container-fluid .container-fluid .content .hero div span {
+        background-color: black;
+        position: relative; }
+        .container-fluid .container-fluid .main .hero .container-newyork {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: -webkit-flex;
+          /* Safari */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .container-fluid .container-fluid .main .hero .container-newyork span {
+            font-family: "HelveticaNeueLTStd-BlkEx";
+            font-size: 58px;
+            text-transform: uppercase;
+            line-height: 44px;
             display: block;
             color: white; }
-        .container-fluid .container-fluid .content .hero h1 {
+        .container-fluid .container-fluid .main .hero .statue {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          right: 0px;
+          background: url("../images/statue-3.png") no-repeat;
+          background-position: 50% 85px;
+          background-size: contain; }
+        .container-fluid .container-fluid .main .hero h1 {
           padding: 0; }
-      .container-fluid .container-fluid .content .stories {
+      .container-fluid .container-fluid .main .container-story {
         flex: 4;
         background-color: blue;
         float: right;
         overflow: scroll;
         display: -webkit-flex;
         /* Safari */
-        display: flex; }
-        .container-fluid .container-fluid .content .stories .story {
-          width: 140px;
+        display: flex;
+        flex-direction: initial;
+        justify-content: initial;
+        align-items: initial; }
+        .container-fluid .container-fluid .main .container-story .story {
+          width: 200px;
           background-color: yellow;
           border: 2px solid green; }
 
