@@ -1,7 +1,7 @@
 @import "bootstrap_scss/breakpoints";
 @import "bootstrap_scss/functions";
 @import "bootstrap_scss/variables";
-@import "fonts/fonts";
+@import "scss/fonts";
 
 @mixin transition($args...) {
   -webkit-transition: $args;
@@ -78,7 +78,6 @@ html, body {
         left: -75px;
 
         font: 400 13.5px 'Poppins', sans-serif;
-        // font-family: "marion-bold";
         color: white;
         @include rotate(270deg);
       }
@@ -102,7 +101,6 @@ html, body {
         > div {
           background-color: white;
           margin: 0 4.5px;
-          
         }
       }
     }
@@ -121,8 +119,8 @@ html, body {
         .names {
           position: absolute;
           width: 100%;
-          top: 55px;
-          
+          top: 10%;
+
           @include display(row, center, center);
 
           > div {
@@ -157,7 +155,7 @@ html, body {
           @include display(column, center, center);
 
           span {
-            font-family: "HelveticaNeueLTStd-BlkEx";
+            font-family: "HelveticaNeueLTStd-BlkEx", sans-serif;
             font-size: 58px;
             text-transform: uppercase;
             line-height: 44px;
@@ -175,6 +173,69 @@ html, body {
           background: url("../images/statue-3.png") no-repeat;
           background-position: 50% 85px;
           background-size: contain;
+        }
+
+        .arrow {
+          position: absolute;
+          width: 54px;
+          height: 14px;
+          top: 50%;
+          right: 6%;
+          background: url("../images/arrow.png") no-repeat center center;
+          // background-position: 94% 50%;
+        }
+
+        .quote {
+          position: absolute;
+          width: 100%;
+          bottom: 10%;
+
+          @include display(column, center, center);
+
+          :first-child {
+
+            font-family: 'marion-italic';
+            font-size: 23px;
+            color: white;
+            line-height: 40px;
+          }
+
+          :last-child {
+
+            font-family: 'marion-bold';
+            font-size: 13px;
+            color: white;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+          }
+        }
+
+        .links {
+          position: absolute;
+          width: 100%;
+          bottom: 2%;
+
+          @include display(row, space-between, center);
+
+          a {
+            font: 400 10.5px 'Poppins', sans-serif;
+            color: #9b9b9b;
+            cursor: pointer;
+            @include transition(color .3s ease);
+          }
+
+          a:hover {
+            text-decoration: none;
+            color: white;
+          }
+
+          :first-child {
+            margin-left: 16px;
+          }
+
+          :last-child {
+            margin-right: 16px;
+          }
         }
 
         h1 {
