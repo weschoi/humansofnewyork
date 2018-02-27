@@ -20,20 +20,29 @@ class App extends React.Component {
         <div className="main">
           <div className="hero">
 
-            <div className="container-newyork">
-                <span>New York</span>
-                <span>New York</span>
-                <span>New York</span>
-                <span>New York</span>
-                <span>New York</span>
-                <span>New York</span>
-                <span>New York</span>
-                <span>New York</span>
+            <div className="names">
+              <div>
+                <div>Reimagined by</div>
+                <div>Wesley Choi</div>
+              </div>
+              <div>
+                <div>Inspired by</div>
+                <div>Brandon Stanton</div>
+              </div>
             </div>
 
-              <div className="statue">
-              </div>
+            <div className="container-newyork">
+              <span>New York</span>
+              <span>New York</span>
+              <span>New York</span>
+              <span>New York</span>
+              <span>New York</span>
+              <span>New York</span>
+              <span>New York</span>
+              <span>New York</span>
+            </div>
 
+            <div className="statue"></div>
 
           </div>
 
