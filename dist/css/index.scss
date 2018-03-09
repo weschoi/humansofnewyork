@@ -71,6 +71,20 @@ html, body {
 
       @include display(initial, center, center);
 
+      input {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        // border: 2px solid red;
+        opacity: 0;
+        z-index: 2;
+
+        -webkit-touch-callout: none;
+      }
+
       span {
         width: 200px;
         position: absolute;
@@ -94,6 +108,119 @@ html, body {
           @include transition(margin .2s ease);
         }
       }
+
+      > ul {
+        position: absolute;
+        width: 858px;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        padding: 0px;
+        @include display(row, stretch, stretch);
+
+        background: black;
+
+        /* stops flickering of text in safari*/
+        -webkit-font-smothing: antialiased;
+
+        transform: translate(-100%, 0);
+        transform-origin: 0% 0%;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+        > div:first-of-type {
+
+          @include display(column, center, flex-start);
+
+          padding-left: 38px;
+          // width: 50%;
+          flex: 1;
+
+          ul {
+            padding: 0;
+            list-style-type: none;
+          }
+
+          > :first-child {
+            font: 300 25px 'Poppins', sans-serif;
+            color: white;
+            line-height: 32px;
+            margin-bottom: 33px;
+          }
+
+          > :nth-child(2) {
+            font: 500 12px 'Poppins', sans-serif;
+            line-height: 20px;
+            margin-top: 33px;
+
+            a {
+              color: #9B9B9B;
+              text-decoration: none;
+            }
+          }
+        }
+
+        > div:nth-child(2) {
+          flex: 1;
+
+          @include display(row, flex-start, stretch);
+
+          > div {
+            width: 40%;
+            margin-right: 28px;
+
+            @include display(column, flex-start, flex-start);
+
+            > .profilepic {
+              width: 100%;
+              height: 59px;
+              
+            }
+
+            > .wes {
+              background: url('../images/wes.jpg') no-repeat center center;
+              background-size: cover;
+            }
+
+            > .brandon {
+              background: url('../images/brandon.png') no-repeat center center;
+              background-size: cover;
+            }
+
+            > p {
+              font: 400 10.5px 'Poppins', sans-serif;
+              color: #9b9b9b;
+              text-align: left;
+            }
+
+            > p:nth-child(2) {
+              margin-bottom: -3px;
+            }
+
+            > p:nth-child(3) {
+              font-size: 13px;
+              color: white;
+            }
+
+            > p:nth-child(4) {
+              font: 11.5px 'marion', serif;
+              color: #e5e5e5;
+              line-height: 14px;
+            }
+
+            > p:nth-child(5), p:nth-child(6) {
+              font-weight: 600;
+              font-size: 10px;
+              margin-bottom: -3px;
+            }
+          }
+        }
+      }
+
+      input:checked ~ ul {
+        transform: none;
+      }
+
     }
 
     .menu:hover {

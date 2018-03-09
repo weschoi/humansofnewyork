@@ -10,11 +10,48 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <div className="menu">
+          <input type="checkbox"></input>
           <span>Humans of New York</span>
           <div>
             <div></div>
             <div></div>
           </div>
+
+          <ul>
+            <div>
+              <ul>
+                <li>Stories</li>
+                <li>Countries</li>
+                <li>Series</li> 
+              </ul>
+              <ul>
+                <li><a href="https://www.facebook.com/humansofnewyork/">facebook</a></li>
+                <li><a href="https://www.facebook.com/humansofnewyork/">twitter</a></li>
+                <li><a href="https://www.facebook.com/humansofnewyork/">instagram</a></li> 
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <div className="profilepic wes"></div>
+                <p>The Web Developer</p>
+                <p>Wesley Choi</p>
+                <p>I like creating things that are useful beyond their visual appeal, and meaningful enough to make a genuine impact on people’s lives. When I’m not coding, I watch football, basketball, stand-up comedy, and youtube podcasts.</p>
+                <p>Email</p>
+                <p>weschoi.creative@gmail.com</p>
+              </div>
+              <div>
+                <div className="profilepic brandon"></div>
+                <p>The Creator</p>
+                <p>Brandon Stanton</p>
+                <p>Humans of New York began as a photography project in 2010.  The initial goal was to photograph 10,000 New Yorkers on the street, and create an exhaustive catalogue of the city’s inhabitants.</p>
+                <p>Email</p>
+                <p>honybrandon@gmail.com </p>
+              </div>
+            </div>
+          </ul>
+
+
         </div>
 
         <div className="main">
