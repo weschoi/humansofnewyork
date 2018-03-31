@@ -9,15 +9,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="menu">
-          <input type="checkbox"></input>
-          <span>Humans of New York</span>
-          <div>
-            <div></div>
-            <div></div>
-          </div>
 
-          <ul>
+        <input type="checkbox" onClick={() => {console.log('hi')} }></input>
+
+        <div className="nav-container">
+          <ul className="about">
             <div>
               <ul>
                 <li>Stories</li>
@@ -25,9 +21,9 @@ class App extends React.Component {
                 <li>Series</li> 
               </ul>
               <ul>
-                <li><a href="https://www.facebook.com/humansofnewyork/">facebook</a></li>
-                <li><a href="https://www.facebook.com/humansofnewyork/">twitter</a></li>
-                <li><a href="https://www.facebook.com/humansofnewyork/">instagram</a></li> 
+                <li><a href="https://www.facebook.com/humansofnewyork/" target="_blank">facebook</a></li>
+                <li><a href="https://twitter.com/humansofny" target="_blank">twitter</a></li>
+                <li><a href="https://www.instagram.com/humansofny/" target="_blank">instagram</a></li> 
               </ul>
             </div>
 
@@ -52,7 +48,20 @@ class App extends React.Component {
           </ul>
 
 
+
+          <div className="nav">
+            <span>Humans of New York</span>
+            <div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
+
+
+
+
+
 
         <div className="main">
           <div className="hero">
@@ -88,7 +97,7 @@ class App extends React.Component {
             </div>
 
             <div className="links">
-              <a href="http://www.humansofnewyork.com/">go to the original</a>
+              <a href="http://www.humansofnewyork.com/" target="_blank">go to the original</a>
               <a href="https://www.amazon.com/gp/product/1250058902/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1250058902&linkCode=as2&tag=humofnewyor-20&linkId=PDCZMIXZETZP44D7" target="_blank">purchase the book</a>
             </div>
 

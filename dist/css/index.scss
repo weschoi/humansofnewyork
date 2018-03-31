@@ -36,6 +36,11 @@
   align-items: $y;
 }
 
+@mixin width_height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
 .nopadding {
   padding: 0;
 }
@@ -56,84 +61,83 @@ html, body {
 
     @include display(initial, initial, initial);
 
-    .menu {
+    input {
+      position: absolute;
+      display: block;
       width: 52px;
       height: 100%;
-
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      z-index: 1;
-
-      background-color: black;
-      border-right: 1px solid #979797;
       cursor: pointer;
 
-      @include display(initial, center, center);
+      opacity: 0;
+      z-index: 5;
 
-      input {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
+      -webkit-touch-callout: none;
+    }
 
-        // border: 2px solid red;
-        opacity: 0;
-        z-index: 2;
+    input:checked {
+      transform: translate(858px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
 
-        -webkit-touch-callout: none;
+    input:checked ~ .nav-container {
+      transform: translate(0px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+      > div:first-of-type {
+        border-left: 1px solid #979797;
+        transition: border-left 1.5s;
       }
+    }
 
-      span {
-        width: 200px;
-        position: absolute;
-        top: 48px;
-        left: -75px;
-
-        font: 400 13.5px 'Poppins', sans-serif;
-        color: white;
-        @include rotate(270deg);
-      }
-
-      > div {
-        @include display(initial, center, center);
-
+    input:hover ~ .nav-container {
+      .nav {
         > div {
-          width: 2px;
-          height: 35px;
-          background-color: #979797;
-          margin: 0 2px;
-          @include transition(background-color .5s ease);
-          @include transition(margin .2s ease);
+          > div {
+            background-color: white;
+            margin: 0 4.5px;
+          }
         }
       }
+    } 
+
+    .nav-container {
+      transform: translate(-858px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+      @include width_height(910px, 100%);
+      position: fixed;
+      // top: 0px;
+      // left: 0px;
+      z-index: 3;
+      background-color: black;
+      border-right: 1px solid #979797;
+      // border-left: 1px solid #979797;
+      cursor: pointer;
+
+      @include display(row, stretch, stretch);
 
       > ul {
-        position: absolute;
-        width: 858px;
-        height: 100%;
+        // position: absolute;
+        @include width_height(858px, 100%);
         top: 0px;
         left: 0px;
         padding: 0px;
         @include display(row, stretch, stretch);
+        z-index: 5;
 
         background: black;
 
         /* stops flickering of text in safari*/
         -webkit-font-smothing: antialiased;
 
-        transform: translate(-100%, 0);
-        transform-origin: 0% 0%;
-
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-
         > div:first-of-type {
 
           @include display(column, center, flex-start);
 
           padding-left: 38px;
-          // width: 50%;
           flex: 1;
 
           ul {
@@ -172,9 +176,7 @@ html, body {
             @include display(column, flex-start, flex-start);
 
             > .profilepic {
-              width: 100%;
-              height: 59px;
-              
+              @include width_height(100%, 59px);              
             }
 
             > .wes {
@@ -194,18 +196,21 @@ html, body {
             }
 
             > p:nth-child(2) {
+              margin-top: 16px;
               margin-bottom: -3px;
             }
 
             > p:nth-child(3) {
               font-size: 13px;
               color: white;
+              margin-bottom: 17px;
             }
 
             > p:nth-child(4) {
               font: 11.5px 'marion', serif;
               color: #e5e5e5;
               line-height: 14px;
+              margin-bottom: 17px;
             }
 
             > p:nth-child(5), p:nth-child(6) {
@@ -217,20 +222,36 @@ html, body {
         }
       }
 
-      input:checked ~ ul {
-        transform: none;
-      }
+      .nav {
+        @include width_height(52px, 100%);
+        @include display(initial, center, center);
 
-    }
+        span {
+          position: absolute;
+          width: 200px;
+          top: 48px;
+          left: 785px;
 
-    .menu:hover {
-      > div {
+          font: 400 13.5px 'Poppins', sans-serif;
+          color: white;
+          @include rotate(270deg);
+        }
+
         > div {
-          background-color: white;
-          margin: 0 4.5px;
+          @include display(initial, center, center);
+
+          > div {
+            @include width_height(2px, 35px);
+            background-color: #979797;
+            margin: 0 2px;
+            @include transition(background-color .5s ease);
+            @include transition(margin .2s ease);
+          }
         }
       }
     }
+
+
 
     .main {
       width: 100%;

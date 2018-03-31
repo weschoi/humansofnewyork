@@ -33,67 +33,47 @@ html, body {
     flex-direction: initial;
     justify-content: initial;
     align-items: initial; }
-    .container-fluid .container-fluid .menu {
+    .container-fluid .container-fluid input {
+      position: absolute;
+      display: block;
       width: 52px;
       height: 100%;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 5;
+      -webkit-touch-callout: none; }
+    .container-fluid .container-fluid input:checked {
+      transform: translate(858px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+    .container-fluid .container-fluid input:checked ~ .nav-container {
+      transform: translate(0px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+      .container-fluid .container-fluid input:checked ~ .nav-container > div:first-of-type {
+        border-left: 1px solid #979797;
+        transition: border-left 1.5s; }
+    .container-fluid .container-fluid input:hover ~ .nav-container .nav > div > div {
+      background-color: white;
+      margin: 0 4.5px; }
+    .container-fluid .container-fluid .nav-container {
+      transform: translate(-858px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+      width: 910px;
+      height: 100%;
       position: fixed;
-      top: 0px;
-      left: 0px;
-      z-index: 1;
+      z-index: 3;
       background-color: black;
       border-right: 1px solid #979797;
       cursor: pointer;
       display: -webkit-flex;
       /* Safari */
       display: flex;
-      flex-direction: initial;
-      justify-content: center;
-      align-items: center; }
-      .container-fluid .container-fluid .menu input {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2;
-        -webkit-touch-callout: none; }
-      .container-fluid .container-fluid .menu span {
-        width: 200px;
-        position: absolute;
-        top: 48px;
-        left: -75px;
-        font: 400 13.5px 'Poppins', sans-serif;
-        color: white;
-        -webkit-transform: rotate(270deg);
-        -moz-transform: rotate(270deg);
-        -ms-transform: rotate(270deg);
-        -o-transform: rotate(270deg);
-        transform: rotate(270deg); }
-      .container-fluid .container-fluid .menu > div {
-        display: -webkit-flex;
-        /* Safari */
-        display: flex;
-        flex-direction: initial;
-        justify-content: center;
-        align-items: center; }
-        .container-fluid .container-fluid .menu > div > div {
-          width: 2px;
-          height: 35px;
-          background-color: #979797;
-          margin: 0 2px;
-          -webkit-transition: background-color 0.5s ease;
-          -moz-transition: background-color 0.5s ease;
-          -ms-transition: background-color 0.5s ease;
-          -o-transition: background-color 0.5s ease;
-          transition: background-color 0.5s ease;
-          -webkit-transition: margin 0.2s ease;
-          -moz-transition: margin 0.2s ease;
-          -ms-transition: margin 0.2s ease;
-          -o-transition: margin 0.2s ease;
-          transition: margin 0.2s ease; }
-      .container-fluid .container-fluid .menu > ul {
-        position: absolute;
+      flex-direction: row;
+      justify-content: stretch;
+      align-items: stretch; }
+      .container-fluid .container-fluid .nav-container > ul {
         width: 858px;
         height: 100%;
         top: 0px;
@@ -105,13 +85,11 @@ html, body {
         flex-direction: row;
         justify-content: stretch;
         align-items: stretch;
+        z-index: 5;
         background: black;
         /* stops flickering of text in safari*/
-        -webkit-font-smothing: antialiased;
-        transform: translate(-100%, 0);
-        transform-origin: 0% 0%;
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
-        .container-fluid .container-fluid .menu > ul > div:first-of-type {
+        -webkit-font-smothing: antialiased; }
+        .container-fluid .container-fluid .nav-container > ul > div:first-of-type {
           display: -webkit-flex;
           /* Safari */
           display: flex;
@@ -120,22 +98,22 @@ html, body {
           align-items: flex-start;
           padding-left: 38px;
           flex: 1; }
-          .container-fluid .container-fluid .menu > ul > div:first-of-type ul {
+          .container-fluid .container-fluid .nav-container > ul > div:first-of-type ul {
             padding: 0;
             list-style-type: none; }
-          .container-fluid .container-fluid .menu > ul > div:first-of-type > :first-child {
+          .container-fluid .container-fluid .nav-container > ul > div:first-of-type > :first-child {
             font: 300 25px 'Poppins', sans-serif;
             color: white;
             line-height: 32px;
             margin-bottom: 33px; }
-          .container-fluid .container-fluid .menu > ul > div:first-of-type > :nth-child(2) {
+          .container-fluid .container-fluid .nav-container > ul > div:first-of-type > :nth-child(2) {
             font: 500 12px 'Poppins', sans-serif;
             line-height: 20px;
             margin-top: 33px; }
-            .container-fluid .container-fluid .menu > ul > div:first-of-type > :nth-child(2) a {
+            .container-fluid .container-fluid .nav-container > ul > div:first-of-type > :nth-child(2) a {
               color: #9B9B9B;
               text-decoration: none; }
-        .container-fluid .container-fluid .menu > ul > div:nth-child(2) {
+        .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) {
           flex: 1;
           display: -webkit-flex;
           /* Safari */
@@ -143,7 +121,7 @@ html, body {
           flex-direction: row;
           justify-content: flex-start;
           align-items: stretch; }
-          .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div {
+          .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div {
             width: 40%;
             margin-right: 28px;
             display: -webkit-flex;
@@ -152,37 +130,78 @@ html, body {
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > .profilepic {
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > .profilepic {
               width: 100%;
               height: 59px; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > .wes {
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > .wes {
               background: url("../images/wes.jpg") no-repeat center center;
               background-size: cover; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > .brandon {
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > .brandon {
               background: url("../images/brandon.png") no-repeat center center;
               background-size: cover; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > p {
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p {
               font: 400 10.5px 'Poppins', sans-serif;
               color: #9b9b9b;
               text-align: left; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > p:nth-child(2) {
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(2) {
+              margin-top: 16px;
               margin-bottom: -3px; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > p:nth-child(3) {
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(3) {
               font-size: 13px;
-              color: white; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > p:nth-child(4) {
+              color: white;
+              margin-bottom: 17px; }
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(4) {
               font: 11.5px 'marion', serif;
               color: #e5e5e5;
-              line-height: 14px; }
-            .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div > p:nth-child(5), .container-fluid .container-fluid .menu > ul > div:nth-child(2) > div p:nth-child(6) {
+              line-height: 14px;
+              margin-bottom: 17px; }
+            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(5), .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div p:nth-child(6) {
               font-weight: 600;
               font-size: 10px;
               margin-bottom: -3px; }
-      .container-fluid .container-fluid .menu input:checked ~ ul {
-        transform: none; }
-    .container-fluid .container-fluid .menu:hover > div > div {
-      background-color: white;
-      margin: 0 4.5px; }
+      .container-fluid .container-fluid .nav-container .nav {
+        width: 52px;
+        height: 100%;
+        display: -webkit-flex;
+        /* Safari */
+        display: flex;
+        flex-direction: initial;
+        justify-content: center;
+        align-items: center; }
+        .container-fluid .container-fluid .nav-container .nav span {
+          position: absolute;
+          width: 200px;
+          top: 48px;
+          left: 785px;
+          font: 400 13.5px 'Poppins', sans-serif;
+          color: white;
+          -webkit-transform: rotate(270deg);
+          -moz-transform: rotate(270deg);
+          -ms-transform: rotate(270deg);
+          -o-transform: rotate(270deg);
+          transform: rotate(270deg); }
+        .container-fluid .container-fluid .nav-container .nav > div {
+          display: -webkit-flex;
+          /* Safari */
+          display: flex;
+          flex-direction: initial;
+          justify-content: center;
+          align-items: center; }
+          .container-fluid .container-fluid .nav-container .nav > div > div {
+            width: 2px;
+            height: 35px;
+            background-color: #979797;
+            margin: 0 2px;
+            -webkit-transition: background-color 0.5s ease;
+            -moz-transition: background-color 0.5s ease;
+            -ms-transition: background-color 0.5s ease;
+            -o-transition: background-color 0.5s ease;
+            transition: background-color 0.5s ease;
+            -webkit-transition: margin 0.2s ease;
+            -moz-transition: margin 0.2s ease;
+            -ms-transition: margin 0.2s ease;
+            -o-transition: margin 0.2s ease;
+            transition: margin 0.2s ease; }
     .container-fluid .container-fluid .main {
       width: 100%;
       position: relative;
