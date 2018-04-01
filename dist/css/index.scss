@@ -80,7 +80,7 @@ html, body {
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     }
 
-    input:checked ~ .nav-container {
+    input:checked ~ .container-nav {
       transform: translate(0px, 0);
       transform-origin: 0% 0%;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
@@ -91,7 +91,13 @@ html, body {
       }
     }
 
-    input:hover ~ .nav-container {
+    input:checked ~ .main {
+      transform: translate(858px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    input:hover ~ .container-nav {
       .nav {
         > div {
           > div {
@@ -102,25 +108,21 @@ html, body {
       }
     } 
 
-    .nav-container {
+    .container-nav {
       transform: translate(-858px, 0);
       transform-origin: 0% 0%;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 
       @include width_height(910px, 100%);
       position: fixed;
-      // top: 0px;
-      // left: 0px;
       z-index: 3;
       background-color: black;
       border-right: 1px solid #979797;
-      // border-left: 1px solid #979797;
       cursor: pointer;
 
       @include display(row, stretch, stretch);
 
       > ul {
-        // position: absolute;
         @include width_height(858px, 100%);
         top: 0px;
         left: 0px;
@@ -251,16 +253,20 @@ html, body {
       }
     }
 
-
-
     .main {
       width: 100%;
       position: relative;
       padding-left: 52px;
+      overflow-x: auto;
       @include display(initial, initial, initial);
 
+      transform: translate(0px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
       .hero {
-        flex: 5;
+        // flex: 5;
+        width: 673px;
         background-color: black;
         position: relative;
 
@@ -273,23 +279,25 @@ html, body {
 
           > div {
 
-            :first-child {
+            div {
               font: 400 10.5px 'Poppins', sans-serif;
+            }
+
+            :first-child {
               color: #9b9b9b;
               line-height: 13px;
             }
 
             :nth-child(2) {
-              font: 400 10.5px 'Poppins', sans-serif;
               color: white;
             }
           }
 
-          > :first-child {
+          >:first-child {
             margin-right: 125px;
           }
 
-          > :nth-child(2) {
+          >:nth-child(2) {
             margin-left: 125px;
             text-align: right;
           }
@@ -297,17 +305,13 @@ html, body {
 
         .container-newyork {
           position: absolute;
-          width: 100%;
-          height: 100%;
-
+          @include width_height(100%, 100%);
           @include display(column, center, center);
 
           span {
-            font-family: "HelveticaNeueLTStd-BlkEx", sans-serif;
-            font-size: 58px;
+            font: 58px 'HelveticaNeueLTStd-BlkEx', sans-serif;
             text-transform: uppercase;
             line-height: 44px;
-            display: block;
             color: white;
           }
         }
@@ -341,17 +345,13 @@ html, body {
           @include display(column, center, center);
 
           :first-child {
-
-            font-family: 'marion-italic';
-            font-size: 23px;
+            font: 23px 'marion-italic', serif;
             color: white;
             line-height: 40px;
           }
 
           :last-child {
-
-            font-family: 'marion-bold';
-            font-size: 13px;
+            font: 13px 'marion-bold', serif;
             color: white;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -385,25 +385,56 @@ html, body {
             margin-right: 16px;
           }
         }
-
-        h1 {
-          padding: 0;
-        }
       }
 
       .container-story {
-        flex: 4;
-        background-color: blue;
-        float: right;
-        overflow: scroll;
-        @include display(initial, initial, initial);
+        // flex: 4;
+        width: 555px;
+        // overflow-x: auto;
+        @include display(row, initial, initial);
 
-        .story {
-          // flex: 1;
-          width: 200px;
-          // overflow: hidden;
-          background-color: yellow;
-          border: 2px solid green;
+        > div {
+          min-width: 200px;
+          border-right: 1px solid #979797;
+          padding: 13px;
+          padding-top: 40px;
+
+          @include display(column, flex-start, center);
+
+          > div {
+            width: 100%;
+            font-size: 12px;
+          }
+
+          > :first-child {
+            font: 22px 'HelveticaNeueLTStd-BlkEx', serif;
+            color: #9B9B9B;
+
+          }
+
+          > :nth-child(2) {
+            font: 600 9px 'Poppins', sans-serif;
+            color: #979797;
+            text-transform: uppercase;
+          }
+
+          > :nth-child(3) {
+            @include width_height(100%, 85px);
+            margin-top: 25px;
+            margin-bottom: 10px;
+          }
+
+          > :nth-child(4) {
+            font: 11.5px 'marion', serif;
+            color: #4A4A4A;
+          }
+
+          > :nth-child(5) {
+            margin-top: 16px;
+            font: 10px 'Poppins', sans-serif;
+            color: #979797;
+            text-align: center;
+          }
         }
       }
     }

@@ -46,17 +46,21 @@ html, body {
       transform: translate(858px, 0);
       transform-origin: 0% 0%;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
-    .container-fluid .container-fluid input:checked ~ .nav-container {
+    .container-fluid .container-fluid input:checked ~ .container-nav {
       transform: translate(0px, 0);
       transform-origin: 0% 0%;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
-      .container-fluid .container-fluid input:checked ~ .nav-container > div:first-of-type {
+      .container-fluid .container-fluid input:checked ~ .container-nav > div:first-of-type {
         border-left: 1px solid #979797;
         transition: border-left 1.5s; }
-    .container-fluid .container-fluid input:hover ~ .nav-container .nav > div > div {
+    .container-fluid .container-fluid input:checked ~ .main {
+      transform: translate(858px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+    .container-fluid .container-fluid input:hover ~ .container-nav .nav > div > div {
       background-color: white;
       margin: 0 4.5px; }
-    .container-fluid .container-fluid .nav-container {
+    .container-fluid .container-fluid .container-nav {
       transform: translate(-858px, 0);
       transform-origin: 0% 0%;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -73,7 +77,7 @@ html, body {
       flex-direction: row;
       justify-content: stretch;
       align-items: stretch; }
-      .container-fluid .container-fluid .nav-container > ul {
+      .container-fluid .container-fluid .container-nav > ul {
         width: 858px;
         height: 100%;
         top: 0px;
@@ -89,7 +93,7 @@ html, body {
         background: black;
         /* stops flickering of text in safari*/
         -webkit-font-smothing: antialiased; }
-        .container-fluid .container-fluid .nav-container > ul > div:first-of-type {
+        .container-fluid .container-fluid .container-nav > ul > div:first-of-type {
           display: -webkit-flex;
           /* Safari */
           display: flex;
@@ -98,22 +102,22 @@ html, body {
           align-items: flex-start;
           padding-left: 38px;
           flex: 1; }
-          .container-fluid .container-fluid .nav-container > ul > div:first-of-type ul {
+          .container-fluid .container-fluid .container-nav > ul > div:first-of-type ul {
             padding: 0;
             list-style-type: none; }
-          .container-fluid .container-fluid .nav-container > ul > div:first-of-type > :first-child {
+          .container-fluid .container-fluid .container-nav > ul > div:first-of-type > :first-child {
             font: 300 25px 'Poppins', sans-serif;
             color: white;
             line-height: 32px;
             margin-bottom: 33px; }
-          .container-fluid .container-fluid .nav-container > ul > div:first-of-type > :nth-child(2) {
+          .container-fluid .container-fluid .container-nav > ul > div:first-of-type > :nth-child(2) {
             font: 500 12px 'Poppins', sans-serif;
             line-height: 20px;
             margin-top: 33px; }
-            .container-fluid .container-fluid .nav-container > ul > div:first-of-type > :nth-child(2) a {
+            .container-fluid .container-fluid .container-nav > ul > div:first-of-type > :nth-child(2) a {
               color: #9B9B9B;
               text-decoration: none; }
-        .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) {
+        .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) {
           flex: 1;
           display: -webkit-flex;
           /* Safari */
@@ -121,7 +125,7 @@ html, body {
           flex-direction: row;
           justify-content: flex-start;
           align-items: stretch; }
-          .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div {
+          .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div {
             width: 40%;
             margin-right: 28px;
             display: -webkit-flex;
@@ -130,36 +134,36 @@ html, body {
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > .profilepic {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > .profilepic {
               width: 100%;
               height: 59px; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > .wes {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > .wes {
               background: url("../images/wes.jpg") no-repeat center center;
               background-size: cover; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > .brandon {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > .brandon {
               background: url("../images/brandon.png") no-repeat center center;
               background-size: cover; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > p {
               font: 400 10.5px 'Poppins', sans-serif;
               color: #9b9b9b;
               text-align: left; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(2) {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > p:nth-child(2) {
               margin-top: 16px;
               margin-bottom: -3px; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(3) {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > p:nth-child(3) {
               font-size: 13px;
               color: white;
               margin-bottom: 17px; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(4) {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > p:nth-child(4) {
               font: 11.5px 'marion', serif;
               color: #e5e5e5;
               line-height: 14px;
               margin-bottom: 17px; }
-            .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div > p:nth-child(5), .container-fluid .container-fluid .nav-container > ul > div:nth-child(2) > div p:nth-child(6) {
+            .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div > p:nth-child(5), .container-fluid .container-fluid .container-nav > ul > div:nth-child(2) > div p:nth-child(6) {
               font-weight: 600;
               font-size: 10px;
               margin-bottom: -3px; }
-      .container-fluid .container-fluid .nav-container .nav {
+      .container-fluid .container-fluid .container-nav .nav {
         width: 52px;
         height: 100%;
         display: -webkit-flex;
@@ -168,7 +172,7 @@ html, body {
         flex-direction: initial;
         justify-content: center;
         align-items: center; }
-        .container-fluid .container-fluid .nav-container .nav span {
+        .container-fluid .container-fluid .container-nav .nav span {
           position: absolute;
           width: 200px;
           top: 48px;
@@ -180,14 +184,14 @@ html, body {
           -ms-transform: rotate(270deg);
           -o-transform: rotate(270deg);
           transform: rotate(270deg); }
-        .container-fluid .container-fluid .nav-container .nav > div {
+        .container-fluid .container-fluid .container-nav .nav > div {
           display: -webkit-flex;
           /* Safari */
           display: flex;
           flex-direction: initial;
           justify-content: center;
           align-items: center; }
-          .container-fluid .container-fluid .nav-container .nav > div > div {
+          .container-fluid .container-fluid .container-nav .nav > div > div {
             width: 2px;
             height: 35px;
             background-color: #979797;
@@ -206,14 +210,18 @@ html, body {
       width: 100%;
       position: relative;
       padding-left: 52px;
+      overflow-x: auto;
       display: -webkit-flex;
       /* Safari */
       display: flex;
       flex-direction: initial;
       justify-content: initial;
-      align-items: initial; }
+      align-items: initial;
+      transform: translate(0px, 0);
+      transform-origin: 0% 0%;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
       .container-fluid .container-fluid .main .hero {
-        flex: 5;
+        width: 673px;
         background-color: black;
         position: relative; }
         .container-fluid .container-fluid .main .hero .names {
@@ -226,12 +234,12 @@ html, body {
           flex-direction: row;
           justify-content: center;
           align-items: center; }
+          .container-fluid .container-fluid .main .hero .names > div div {
+            font: 400 10.5px 'Poppins', sans-serif; }
           .container-fluid .container-fluid .main .hero .names > div :first-child {
-            font: 400 10.5px 'Poppins', sans-serif;
             color: #9b9b9b;
             line-height: 13px; }
           .container-fluid .container-fluid .main .hero .names > div :nth-child(2) {
-            font: 400 10.5px 'Poppins', sans-serif;
             color: white; }
           .container-fluid .container-fluid .main .hero .names > :first-child {
             margin-right: 125px; }
@@ -249,11 +257,9 @@ html, body {
           justify-content: center;
           align-items: center; }
           .container-fluid .container-fluid .main .hero .container-newyork span {
-            font-family: "HelveticaNeueLTStd-BlkEx", sans-serif;
-            font-size: 58px;
+            font: 58px 'HelveticaNeueLTStd-BlkEx', sans-serif;
             text-transform: uppercase;
             line-height: 44px;
-            display: block;
             color: white; }
         .container-fluid .container-fluid .main .hero .statue {
           position: absolute;
@@ -282,13 +288,11 @@ html, body {
           justify-content: center;
           align-items: center; }
           .container-fluid .container-fluid .main .hero .quote :first-child {
-            font-family: 'marion-italic';
-            font-size: 23px;
+            font: 23px 'marion-italic', serif;
             color: white;
             line-height: 40px; }
           .container-fluid .container-fluid .main .hero .quote :last-child {
-            font-family: 'marion-bold';
-            font-size: 13px;
+            font: 13px 'marion-bold', serif;
             color: white;
             letter-spacing: 3px;
             text-transform: uppercase; }
@@ -318,22 +322,47 @@ html, body {
             margin-left: 16px; }
           .container-fluid .container-fluid .main .hero .links :last-child {
             margin-right: 16px; }
-        .container-fluid .container-fluid .main .hero h1 {
-          padding: 0; }
       .container-fluid .container-fluid .main .container-story {
-        flex: 4;
-        background-color: blue;
-        float: right;
-        overflow: scroll;
+        width: 555px;
         display: -webkit-flex;
         /* Safari */
         display: flex;
-        flex-direction: initial;
+        flex-direction: row;
         justify-content: initial;
         align-items: initial; }
-        .container-fluid .container-fluid .main .container-story .story {
-          width: 200px;
-          background-color: yellow;
-          border: 2px solid green; }
+        .container-fluid .container-fluid .main .container-story > div {
+          min-width: 200px;
+          border-right: 1px solid #979797;
+          padding: 13px;
+          padding-top: 40px;
+          display: -webkit-flex;
+          /* Safari */
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center; }
+          .container-fluid .container-fluid .main .container-story > div > div {
+            width: 100%;
+            font-size: 12px; }
+          .container-fluid .container-fluid .main .container-story > div > :first-child {
+            font: 22px 'HelveticaNeueLTStd-BlkEx', serif;
+            color: #9B9B9B; }
+          .container-fluid .container-fluid .main .container-story > div > :nth-child(2) {
+            font: 600 9px 'Poppins', sans-serif;
+            color: #979797;
+            text-transform: uppercase; }
+          .container-fluid .container-fluid .main .container-story > div > :nth-child(3) {
+            width: 100%;
+            height: 85px;
+            margin-top: 25px;
+            margin-bottom: 10px; }
+          .container-fluid .container-fluid .main .container-story > div > :nth-child(4) {
+            font: 11.5px 'marion', serif;
+            color: #4A4A4A; }
+          .container-fluid .container-fluid .main .container-story > div > :nth-child(5) {
+            margin-top: 16px;
+            font: 10px 'Poppins', sans-serif;
+            color: #979797;
+            text-align: center; }
 
 /*# sourceMappingURL=index.css.map */

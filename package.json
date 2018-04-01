@@ -34,6 +34,7 @@
     "popper.js": "^1.12.9",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "scrollmagic": "^2.0.5",
     "webpack": "^3.6.0"
   }
 }
